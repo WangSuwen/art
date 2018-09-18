@@ -3,6 +3,7 @@ import { Router, Route, Switch, HashRouter } from 'react-router-dom';
 import createHashHistory from 'history/createHashHistory'
 const hashHistory = createHashHistory()
 
+import '@styles/main.scss';
 import RootRoute from './root';
 import TodosRoute from './todos';
 
