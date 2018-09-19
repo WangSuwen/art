@@ -1,0 +1,25 @@
+.block-one {
+    background-image: url('../../images/bg-img01.jpg');
+    background-size: cover;
+    background-position-y: bottom;
+    .block-one-shadow {
+        background-image: url('../../images/bg-img-shadow.png');
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .block-one-text {
+        font-weight: 100;
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+        color: #fff;
+        padding-top: 150px;
+        .block-one-title {
+            font-size: 42px;
+        }
+    }
+    
+}

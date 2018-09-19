@@ -1,4 +1,5 @@
 import React from "react";
+import BlockOne from './block-one';
 
 export default class Home extends React.Component{
   constructor() {
@@ -7,7 +8,7 @@ export default class Home extends React.Component{
   render() {
     return (
       <div>
-        <h2>一级--Home</h2>
+        <BlockOne />
       </div>
     );
   }
