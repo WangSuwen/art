@@ -15,7 +15,7 @@ export default class BlockOne extends React.Component{
         <img src={fontIcon}/>
         <div className="block-one-shadow"></div>
         <div className="block-one-text">
-          <span className="block-one-title">艺术灵感源自生活</span>
+          <span className="block-one-title">艺术源自生活</span>
         </div>
       </div>
     );
