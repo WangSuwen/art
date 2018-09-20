@@ -2,8 +2,8 @@ import React from "react";
 import '@styles/home/block-one.scss';
 
 export default class BlockOne extends React.Component{
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
   componentDidMount() {
      document.getElementById('blockOne').style.height = window.innerHeight + 'px';

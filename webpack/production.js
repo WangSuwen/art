@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var webpackConf = require('./webpack.base.conf');
+var webpackConf = require('./base');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
