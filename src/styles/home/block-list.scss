@@ -1,13 +1,27 @@
-.list-icon {
+.list {
     position: absolute;
+    top: 0;
+    bottom: 0;
     right: 0;
-    z-index: 10;
-    width: 2rem;
+    z-index: 5;
     img {
         width: .3rem;
+        margin-right: .6rem;
         cursor: pointer;
     }
+    .list-icon-show {
+        display: inline-block;
+    }
+    .list-icon-hide {
+        display: none;
+    }
     ul {
+        width: 2.5rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(3, 26, 42, 0.95);
         li {
             font-size: .16rem;
             color: #fff;
