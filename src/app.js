@@ -4,6 +4,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from '@reducers';
 import RootRouter from '@routes';
+import './util/resize';
 
 let store;
 if (process.env.NODE_ENV === 'development') {
