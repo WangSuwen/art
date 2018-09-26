@@ -1,6 +1,7 @@
 import React from "react";
 import BlockOne from './block-one';
 import BlockList from './block-list';
+import NavBar from './nav-bar';
 
 export default class Home extends React.Component{
   constructor() {
@@ -9,8 +10,9 @@ export default class Home extends React.Component{
   render() {
     return (
       <div>
-        <BlockList />
+        <NavBar/>
         <BlockOne />
+        {/* <BlockList /> */}
       </div>
     );
   }
