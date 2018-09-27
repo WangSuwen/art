@@ -35,17 +35,21 @@ module.exports = {
 						options: {
 							sourceMap: true
 						}
-					}
+					}, {
+            /**
+             *  自动补全 浏览器前缀，配置 postcss.config.js 
+             *  并 配合  autoprefixer 包 使用
+             */
+            loader: 'postcss-loader'
+          }
 				]
 			}, {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {}
-          }
-        ]
-      }
+          test: /\.(eot|ttf|woff|woff2)(\?\S*)?$/,
+          loader: 'file-loader?name=files/[hash:8].[ext]'
+      }, {
+          test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+          loader: 'url-loader?limit=8000&name=images/[name].[hash:8].[ext]'
+      },
 		]
   },
   plugins: [
@@ -74,7 +78,7 @@ module.exports = {
       minChunks: 1,
       maxAsyncRequests: 5,
       maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
+      automaticNameDelimiter: '~', // chunk name 与 chunkhash值之间的 分隔符
       name: true,
       cacheGroups: {
         /**

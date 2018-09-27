@@ -12,15 +12,8 @@ export default class BlockList extends React.Component{
     });
   }
   render() {
-    const listIcon = require('@images/list-icon.png');
-    const toRight = require('@images/to-right.png');
-    const _state = this.state;
     return (
       <div className="list">
-        <img
-          onClick={this.iconClick}
-          src={!_state.showList ? listIcon : toRight}
-        />
         <ul>
           <li>类目</li>
           <li>类目</li>

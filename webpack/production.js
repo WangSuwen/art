@@ -33,6 +33,6 @@ webpackConf.plugins.push(
 	port: 9000,
 }; */
 new webpack.DefinePlugin({
-    'progress.env.NODE_ENV': 'production'
+    'process.env.NODE_ENV': 'production'
 });
 module.exports = webpackConf;

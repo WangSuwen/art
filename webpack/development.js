@@ -7,8 +7,9 @@ webpackConf.devServer = {
 	contentBase: path.resolve(__dirname, '..', 'build/dist'),
 	port: 9000,
 };
+// 前端环境  注入环境变量。
 new webpack.DefinePlugin({
-    'progress.env.NODE_ENV': 'development'
+    'process.env.NODE_ENV': 'development'
 });
 
 module.exports = webpackConf;
