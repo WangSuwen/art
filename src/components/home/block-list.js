@@ -1,19 +1,20 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import '@styles/home/block-list.scss';
 
 export default class BlockList extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { showList: false };
   }
-  iconClick = (e) => {
-    this.setState({
-      showList: !this.state.showList
-    });
-  }
+  static propTypes = {
+    listStatus: PropTypes.bool,
+  };
   render() {
     return (
-      <div className="list">
+      <div
+        className={this.props.listStatus ? 'list-show list' : 'list'}
+      >
         <ul>
           <li>类目</li>
           <li>类目</li>

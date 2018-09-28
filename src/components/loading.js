@@ -6,8 +6,8 @@ export default class Loading extends React.Component{
   }
   render() {
     return (
-      <div>
-        <h3>Loading..............</h3>
+      <div style={{fontSize: '.16rem'}}>
+        Loading..............
       </div>
     );
   }

@@ -1,6 +1,8 @@
 .home-index {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
 }
 .block-one {
     width: 100%;
