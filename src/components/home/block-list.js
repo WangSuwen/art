@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import '@styles/home/block-list.scss';
@@ -17,7 +18,7 @@ export default class BlockList extends React.Component{
       >
         <ul>
           <li>
-            <a href="/device-status">机器状态监测</a>
+            <Link to="/device-status">机器状态监测</Link>
           </li>
           <li>类目</li>
           <li>类目</li>

@@ -6,6 +6,7 @@ const hashHistory = createHashHistory()
 import '@styles/main.scss';
 import RootRoute from './root';
 import TodosRoute from './todos';
+import DeviceStatusRoute from './deviceStatus';
 
 export default class RootRouter extends React.Component {
   render() {
@@ -19,6 +20,7 @@ export default class RootRouter extends React.Component {
                     <div>
                       <RootRoute {...props}/>
                       <TodosRoute {...props}/>
+                      <DeviceStatusRoute {...props}/>
                     </div>
                   }
                 />

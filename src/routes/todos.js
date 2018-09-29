@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from 'react-router-dom';
 import AsyncLoad from './asyncLoad';
 
-export default class TodosRout extends React.Component {
+export default class TodosRoute extends React.Component {
   constructor() {
     super();
   }
