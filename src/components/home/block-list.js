@@ -16,7 +16,9 @@ export default class BlockList extends React.Component{
         className={this.props.listStatus ? 'list-show list' : 'list'}
       >
         <ul>
-          <li>类目</li>
+          <li>
+            <a href="/device-status">机器状态监测</a>
+          </li>
           <li>类目</li>
           <li>类目</li>
           <li>类目</li>
