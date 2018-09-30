@@ -7,6 +7,7 @@ import '@styles/main.scss';
 import RootRoute from './root';
 import TodosRoute from './todos';
 import DeviceStatusRoute from './deviceStatus';
+import MonitorRoute from './monitor';
 
 export default class RootRouter extends React.Component {
   render() {
@@ -21,6 +22,7 @@ export default class RootRouter extends React.Component {
                       <RootRoute {...props}/>
                       <TodosRoute {...props}/>
                       <DeviceStatusRoute {...props}/>
+                      <MonitorRoute {...props}/>
                     </div>
                   }
                 />

@@ -7,5 +7,6 @@ export default {
     '@containers/home/index' : Loadable({ loader: () => import('@containers/home/index'), loading: Loading }),
     '@containers/todos' : Loadable({ loader: () => import('@containers/todos'), loading: Loading }),
     '@containers/deviceStatus' : Loadable({ loader: () => import('@containers/deviceStatus'), loading: Loading }),
+    '@containers/monitor' : Loadable({ loader: () => import('@containers/monitor'), loading: Loading }),
 };
 

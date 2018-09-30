@@ -20,7 +20,9 @@ export default class BlockList extends React.Component{
           <li>
             <Link to="/device-status">机器状态监测</Link>
           </li>
-          <li>类目</li>
+          <li>
+            <Link to="/monitor">前端JS异常监控</Link>
+          </li>
           <li>类目</li>
           <li>类目</li>
           <li>类目</li>

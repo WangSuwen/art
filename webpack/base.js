@@ -62,7 +62,7 @@ module.exports = {
 	],
 
 	entry: {
-		app: './src/app.js'
+    app: './src/app.js'
 	},
 
 	output: {
