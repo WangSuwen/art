@@ -1,6 +1,8 @@
 #!/bin/bash
 BUILD="build"
 NODE_MODULES="node_modules"
+echo "git pulling ..."
+git pull
 if [ -d $BUILD ]; then
   rm -rf $BUILD
 fi
