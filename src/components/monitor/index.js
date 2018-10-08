@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
+// import { getMonitor } from '@api/monitor';
+import monitor from '@api/monitor';
 
 export default class MonitorIndex extends React.Component{
   constructor(props) {
@@ -10,12 +12,18 @@ export default class MonitorIndex extends React.Component{
     listStatus: PropTypes.bool,
   };
   componentWillMount () {
-    console.log('will mount');
+    monitor.getMonitor().then(data => {
+      this.setState({
+        data: data
+      }).catch(e => {
+        console.log(e);
+      })
+    });
   }
   render() {
     return (
       <code>
-        错误监控首页
+        {this.state.data}
       </code>
     );
   }
