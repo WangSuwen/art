@@ -10,7 +10,7 @@ export default class RootRoute extends React.Component {
     return (
       <div>
         {/* 页面主体 部分 */}
-        <Route path="/" exact render={(props) => <AsyncLoad compPath="@containers/home/index" {...props} />} />
+        <Route path="/home" exact render={(props) => <AsyncLoad compPath="@containers/home/index" {...props} />} />
       </div>
     );
   }

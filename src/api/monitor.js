@@ -1,7 +1,7 @@
-import { get, post } from './base';
+import reqBase from './base';
 
 export default {
-  getMonitor (params) {
-    return get('monitor', params);
+  getMonitor: function (params) {
+    return reqBase.get('monitor', params);
   }
 };

@@ -4,6 +4,9 @@ import createHashHistory from 'history/createHashHistory'
 const hashHistory = createHashHistory()
 
 import '@styles/main.scss';
+import Header from '@containers/navigator/header';
+import LeftSide from '@containers/navigator/leftSide';
+
 import RootRoute from './root';
 import TodosRoute from './todos';
 import DeviceStatusRoute from './deviceStatus';
@@ -16,13 +19,24 @@ export default class RootRouter extends React.Component {
             <div>
               <Switch>
                 <Route 
-                  path="/"
+                  path="/home"
                   render={(props) => 
                     <div>
                       <RootRoute {...props}/>
-                      <TodosRoute {...props}/>
-                      <DeviceStatusRoute {...props}/>
-                      <MonitorRoute {...props}/>
+                    </div>
+                  }
+                />
+                <Route
+                  path="/"
+                  render={(props) => 
+                    <div>
+                      <Header/>
+                      <div style={{display: 'flex'}}>
+                        <LeftSide/>
+                        <TodosRoute {...props}/>
+                        <DeviceStatusRoute {...props}/>
+                        <MonitorRoute {...props}/>
+                      </div>
                     </div>
                   }
                 />

@@ -15,7 +15,12 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   store = createStore(rootReducer);
 }
-
+if (window.location.hash === '#/') {
+  window.location.href = window.location.href.replace('#/', '#/home');
+}
+/**
+ * 错误上报 
+ */
 window.badJsReport({
   url: monitorUrl[process.env.NODE_ENV],
   data: {
