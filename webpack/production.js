@@ -28,7 +28,7 @@ webpackConf.plugins.push(
     }
   }),
   new OptimizeCssAssetsPlugin({
-    assetNameRegExp: /\d+\.style\.css$/g,
+    assetNameRegExp: /\.style\.css$/g,
     cssProcessor: require('cssnano'),
     cssProcessorPluginOptions: {
       preset: ['default', { discardComments: { removeAll: true } }],

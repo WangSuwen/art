@@ -58,7 +58,7 @@ module.exports = {
       template: path.resolve(__dirname, '..', 'src/index.html'),
     }),
 		
-    new MiniCssExtractPlugin({ filename: 'style.css' }),
+    new MiniCssExtractPlugin({ filename: 'style.[chunkhash].css' }),
 	],
 
 	entry: {
