@@ -75,16 +75,24 @@ export default class MonitorIndex extends React.Component{
     });
     return ( <tbody>{trs}</tbody> );
   }
+  onRowScroll (e) {
+    const monitorRight = document.getElementById('monitorRight');
+    if (e.target.offsetWidth + e.target.scrollLeft >= e.target.scrollWidth - 2) {
+      monitorRight.classList.add('monitor-right-hide');
+    } else if (monitorRight.classList.value.indexOf('monitor-right-hide') > -1) {
+      monitorRight.classList.remove('monitor-right-hide');
+    }
+  }
   render () {
     return (
       <div className="monitor">
-        <div className="monitor-left">
-          <table className="monitor-index" style={{width: '2000px'}}>
+        <div className="monitor-left" onScroll={this.onRowScroll}>
+          <table className="monitor-index" style={{width: '18rem'}}>
             {this.renderHeader1()}
             {this.renderRow1(this.state.data)}
           </table>
         </div>
-        <table className="monitor-index fixed-display">
+        <table className="monitor-index monitor-right" id="monitorRight">
           {this.renderHeader2()}
           {this.renderRow2(this.state.data)}
         </table>

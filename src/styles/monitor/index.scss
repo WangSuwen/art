@@ -3,6 +3,10 @@
   position: relative;
   .monitor-left {
     overflow-x: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 240px;
   }
   .monitor-index {
     font-size: .12rem;
@@ -21,7 +25,7 @@
       padding: .16rem;
     }
   }
-  .fixed-display {
+  .monitor-right {
     position: absolute;
     top: 0;
     right: 0;
@@ -29,5 +33,12 @@
     box-shadow: -6px 0 6px -4px rgba(0,0,0,.15);
     transition: box-shadow .3s ease;
     background-color: white;
+    tr td:last-child {
+      color: rgb(26, 26, 226);
+      cursor: pointer;
+    }
+  }
+  .monitor-right-hide {
+    box-shadow: none;
   }
 }
