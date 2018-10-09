@@ -1,5 +1,33 @@
-.monitor-index {
-  font-size: .16rem;
-  width: 90%;
-  margin: 30px auto;
+.monitor {
+  margin: .1rem .1rem;
+  position: relative;
+  .monitor-left {
+    overflow-x: scroll;
+  }
+  .monitor-index {
+    font-size: .12rem;
+    tr {
+      border-bottom: 1px solid #e8e8e8;
+    }
+    th {
+      background: #f9fafd;
+      color: #727082;
+      word-break: break-word;
+      text-align: left;
+      font-weight: 500;
+      padding: .16rem;
+    }
+    td {
+      padding: .16rem;
+    }
+  }
+  .fixed-display {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 240px;
+    box-shadow: -6px 0 6px -4px rgba(0,0,0,.15);
+    transition: box-shadow .3s ease;
+    background-color: white;
+  }
 }

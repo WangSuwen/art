@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import monitor from '@api/monitor';
 import '@styles/navigator.scss';
 
 export default class Header extends React.Component{

@@ -7,7 +7,7 @@ import '@styles/main.scss';
 import Header from '@containers/navigator/header';
 import LeftSide from '@containers/navigator/leftSide';
 
-import RootRoute from './root';
+import HomeRoute from './home';
 import TodosRoute from './todos';
 import DeviceStatusRoute from './deviceStatus';
 import MonitorRoute from './monitor';
@@ -18,24 +18,25 @@ export default class RootRouter extends React.Component {
         <Router history={hashHistory}>
             <div>
               <Switch>
-                <Route 
-                  path="/home"
-                  render={(props) => 
+                <Route path="/home" render={(props) => 
                     <div>
-                      <RootRoute {...props}/>
+                      <HomeRoute {...props}/>
                     </div>
                   }
                 />
-                <Route
-                  path="/"
-                  render={(props) => 
+                <Route path="/monitor" render={(props) => 
+                    <div>
+                      <MonitorRoute {...props}/>
+                    </div>
+                  }
+                />
+                <Route path="/" render={(props) => 
                     <div>
                       <Header/>
                       <div style={{display: 'flex'}}>
                         <LeftSide/>
                         <TodosRoute {...props}/>
                         <DeviceStatusRoute {...props}/>
-                        <MonitorRoute {...props}/>
                       </div>
                     </div>
                   }
