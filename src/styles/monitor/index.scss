@@ -1,17 +1,22 @@
 .monitor {
   margin: .1rem .1rem;
   position: relative;
+  height: 6.5rem;
   .monitor-left {
     overflow-x: scroll;
     position: absolute;
     top: 0;
     left: 0;
-    right: 240px;
+    right: 2.4rem;
+    .monitor-left-table {
+      width: 19rem;
+    }
   }
   .monitor-index {
     font-size: .12rem;
     tr {
       border-bottom: 1px solid #e8e8e8;
+      height: .5rem;
     }
     th {
       background: #f9fafd;
@@ -19,17 +24,17 @@
       word-break: break-word;
       text-align: left;
       font-weight: 500;
-      padding: .16rem;
+      padding: 0 .16rem;
     }
     td {
-      padding: .16rem;
+      padding: 0 .16rem;
     }
   }
   .monitor-right {
     position: absolute;
     top: 0;
     right: 0;
-    width: 240px;
+    width: 2.4rem;
     box-shadow: -6px 0 6px -4px rgba(0,0,0,.15);
     transition: box-shadow .3s ease;
     background-color: white;
@@ -40,5 +45,10 @@
   }
   .monitor-right-hide {
     box-shadow: none;
+  }
+  .monitor-pagation {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
   }
 }

@@ -1,0 +1,30 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
+  "plugins": [
+    "jsx-a11y",
+    "react"
+  ],
+  "rules": {
+    "react/no-danger-with-children": "off",
+    "react/jsx-first-prop-new-line": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-boolean-value": ["error", "always"],
+    "react/forbid-prop-types": "off",
+    "react/no-string-refs": "off",
+    "react/no-find-dom-node": "off",
+    "react/no-unused-prop-types": ["warn", { "skipShapeProps": true }],
+    "react/jsx-indent": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/label-has-for": "off",
+    "react/jsx-no-undef": "warn",
+    "react/prop-types": "warn",
+    "semi": 2
+  },
+  "extends": ["eslint:all", "plugin:react/all"]
+}

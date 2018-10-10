@@ -2,20 +2,30 @@ import React from "react";
 import PropTypes from 'prop-types';
 import monitor from '@api/monitor';
 import dateFormatUtil from '@util/dateFormat';
+import Pagination from '@components/commons/pagination';
 import '@styles/monitor/index.scss';
 
 export default class MonitorIndex extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { data: [] };
+    this.state = {
+      data: [],
+      currentPage: 1,
+      pageSize: 0
+    };
   }
   static propTypes = {
     listStatus: PropTypes.bool,
   };
   componentDidMount () {
-    monitor.getMonitor().then(data => {
+    this.getMonitorList();
+  }
+  getMonitorList = (pageNumber = 1) => {
+    monitor.getMonitor({currentPage: pageNumber}).then(data => {
       this.setState({
-        data: data
+        data: data.list,
+        currentPage: data.currentPage,
+        pageSize: data.pageSize
       });
     }).catch(e => {
       console.log('123456789', e);
@@ -51,11 +61,11 @@ export default class MonitorIndex extends React.Component{
     data.forEach(d => {
       trs.push(
         <tr key={`2_${d._id}`}>
-          <td>{d.appKey}</td>
-          <td>{d.msg}</td>
-          <td>{d.pageUrl}</td>
-          <td>{d.reqIp}</td>
-          <td>{d.userAgent}</td>
+          <td>{d.appKey || "暂无"}</td>
+          <td>{d.msg.substr(0, 50) || "暂无"}</td>
+          <td>{d.pageUrl || "暂无"}</td>
+          <td>{d.reqIp || "暂无"}</td>
+          <td>{d.userAgent || "暂无"}</td>
           <td>山东</td>
           <td>烟台</td>
         </tr>
@@ -83,11 +93,14 @@ export default class MonitorIndex extends React.Component{
       monitorRight.classList.remove('monitor-right-hide');
     }
   }
+  clickHandle = (pageNumber) => {
+    this.getMonitorList(pageNumber);
+  }
   render () {
     return (
       <div className="monitor">
         <div className="monitor-left" onScroll={this.onRowScroll}>
-          <table className="monitor-index" style={{width: '18rem'}}>
+          <table className="monitor-index monitor-left-table">
             {this.renderHeader1()}
             {this.renderRow1(this.state.data)}
           </table>
@@ -96,6 +109,13 @@ export default class MonitorIndex extends React.Component{
           {this.renderHeader2()}
           {this.renderRow2(this.state.data)}
         </table>
+        <div className="monitor-pagation">
+          <Pagination
+            pageSize={this.state.pageSize}
+            currentPage={this.state.currentPage}
+            clickHandle={this.clickHandle}
+          />
+        </div>
       </div>
     );
   }

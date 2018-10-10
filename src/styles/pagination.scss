@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+  font-size: .14rem;
+  li {
+    cursor: pointer;
+    border-radius: .04rem;
+    user-select: none;
+    user-select: none;
+    min-width: .32rem;
+    text-align: center;
+    list-style: none;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    font-family: Arial;
+    outline: 0;
+    display: inline-block;
+    vertical-align: middle;
+    height: .3rem;
+    line-height: .3rem;
+    margin-right: .08rem;
+  }
+  li.pagination-active {
+    border-color: #1890ff;
+    font-weight: 500;
+  }
+  li.pagination-disable {
+    border-color: #d9d9d9;
+    color: rgba(0,0,0,.25);
+    cursor: not-allowed;
+  }
+}
