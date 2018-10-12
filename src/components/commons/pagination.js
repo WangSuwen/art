@@ -26,7 +26,6 @@ export default class Pagination extends React.Component{
     return lis;
   }
   render() {
-    console.log();
     return (
       <ul className={this.props.classes ? this.props.classes : "pagination"}>
         <li className={this.props.currentPage === 1 ? "pagination-disable" : ""}>{"<"}</li>

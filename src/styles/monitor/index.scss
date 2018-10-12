@@ -1,3 +1,15 @@
+.monitor-stack {
+  font-size: .14rem;
+  margin: 0.2rem 0 .5rem .2rem;
+  border-bottom: .01rem solid #eaeaea;
+  padding-bottom: .2rem;
+  .stack-info-title {
+    color: #727082;
+  }
+  .monitor-stack-info {
+    margin-top: .2rem;
+  }
+}
 .monitor {
   margin: .1rem .1rem;
   position: relative;

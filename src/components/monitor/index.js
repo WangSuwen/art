@@ -10,6 +10,7 @@ export default class MonitorIndex extends React.Component{
     super(props);
     this.state = {
       data: [],
+      stackInfo: '',
       currentPage: 1,
       pageSize: 0
     };
@@ -30,6 +31,9 @@ export default class MonitorIndex extends React.Component{
     }).catch(e => {
       console.log('123456789', e);
     });
+  }
+  showStackInfo = (num) => {
+    document.getElementById('errorStackInfo').innerHTML = this.state.data[num].errorStack.replace(/\n/g, '<br>').replace(/\s/g, '&nbsp;');
   }
   renderHeader1 () {
     return (
@@ -75,11 +79,11 @@ export default class MonitorIndex extends React.Component{
   }
   renderRow2 (data) {
     const trs = [];
-    data.forEach(d => {
+    data.forEach((d, index) => {
       trs.push(
         <tr key={`2_${d._id}`}>
           <td>{dateFormatUtil.dateFormat(new Date(d.createdAt), 'yyyy-MM-dd hh:mm:ss')}</td>
-          <td>查看详情</td>
+          <td onClick={() => this.showStackInfo(index)}>查看详情</td>
         </tr>
       );
     });
@@ -98,23 +102,29 @@ export default class MonitorIndex extends React.Component{
   }
   render () {
     return (
-      <div className="monitor">
-        <div className="monitor-left" onScroll={this.onRowScroll}>
-          <table className="monitor-index monitor-left-table">
-            {this.renderHeader1()}
-            {this.renderRow1(this.state.data)}
-          </table>
+      <div>
+        <div className="monitor-stack">
+          <span className="stack-info-title">错误堆栈信息</span>
+          <p className="monitor-stack-info" id="errorStackInfo"></p>
         </div>
-        <table className="monitor-index monitor-right" id="monitorRight">
-          {this.renderHeader2()}
-          {this.renderRow2(this.state.data)}
-        </table>
-        <div className="monitor-pagation">
-          <Pagination
-            pageSize={this.state.pageSize}
-            currentPage={this.state.currentPage}
-            clickHandle={this.clickHandle}
-          />
+        <div className="monitor">
+          <div className="monitor-left" onScroll={this.onRowScroll}>
+            <table className="monitor-index monitor-left-table">
+              {this.renderHeader1()}
+              {this.renderRow1(this.state.data)}
+            </table>
+          </div>
+          <table className="monitor-index monitor-right" id="monitorRight">
+            {this.renderHeader2()}
+            {this.renderRow2(this.state.data)}
+          </table>
+          <div className="monitor-pagation">
+            <Pagination
+              pageSize={this.state.pageSize}
+              currentPage={this.state.currentPage}
+              clickHandle={this.clickHandle}
+            />
+          </div>
         </div>
       </div>
     );
